@@ -1,0 +1,29 @@
+@use "../global" as g;
+
+.l-inner {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: g.min-p2v(20px, g.$xs-width);
+
+  @include g.mq(sm) {
+    padding-inline: g.min-p2v(60px, g.$xl-width);
+  }
+}
+
+.l-inner__link {
+  @include g.mq(sm) {
+    max-width: g.$xl-width;
+    margin-inline: auto;
+  }
+}
+
+.l-inner__btn {
+}
+
+.l-inner__sticky {
+  // max-width: g.$xs-width;
+
+  @include g.mq(sm) {
+    max-width: g.$xl-width;
+  }
+}

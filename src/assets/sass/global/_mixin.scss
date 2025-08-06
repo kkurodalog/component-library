@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "./variables" as global;
+
+// ---
+// メディアクエリー
+// ---
+@mixin mq($breakpoint: sp) {
+	@if not map.has-key(global.$breakpoints, $breakpoint) {
+		@error "指定されたbreakpoint「#{$breakpoint}」は定義されていません。";
+	}
+	@media #{map.get(global.$breakpoints, $breakpoint)} {
+		@content;
+	}
+}

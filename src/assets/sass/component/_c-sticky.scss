@@ -1,0 +1,138 @@
+@use "../global" as g;
+
+.c-sticky {
+  display: flex;
+  justify-content: center;
+}
+
+.c-sticky__item {
+  margin-top: 1rem;
+}
+
+.c-sticky__margin {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 100vh;
+  background-color: g.$sub-color-shade;
+}
+
+// ------------------
+// タイトルを固定する
+// ------------------
+
+.c-sticky-1__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @include g.mq(sm) {
+    flex-direction: row;
+  }
+}
+
+.c-sticky-1__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-inline: 5rem;
+  height: fit-content;
+
+  @include g.mq(sm) {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+.c-sticky-1__head {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+.c-sticky-1__body {
+}
+
+.c-sticky-1__body-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.c-sticky-1__images {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: 5rem;
+}
+
+.c-sticky-1__image {
+  img {
+    width: 100%;
+  }
+}
+
+// ------------------
+// タイトルと画像を固定する
+// ------------------
+
+.c-sticky-2__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @include g.mq(sm) {
+    flex-direction: row;
+  }
+}
+
+.c-sticky-2__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-inline: 5rem;
+  height: fit-content;
+
+  @include g.mq(sm) {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+.c-sticky-2__head {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+.c-sticky-2__body {
+}
+
+.c-sticky-2__body-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.c-sticky-2__images {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: 5rem;
+}
+
+.c-sticky-2__image {
+  img {
+    width: 100%;
+  }
+
+  @include g.mq(sm) {
+    position: sticky;
+    top: 1rem;
+  }
+}

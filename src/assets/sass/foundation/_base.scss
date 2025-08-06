@@ -1,0 +1,44 @@
+@use "../global" as g;
+html {
+  font-size: min(calc(g.$fz-base / g.$xs-width * 100vw), g.$fz-base);
+
+  @include g.mq(sm) {
+    font-size: min(calc(g.$fz-base / g.$xl-width * 100vw), g.$fz-base);
+  }
+}
+
+body {
+  position: relative;
+  color: g.$text-color;
+  font-family: g.$ff-base;
+  font-weight: g.$fw-base;
+  line-height: g.$lh-base;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+.m-plus-rounded-1c-regular {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.m-plus-rounded-1c-medium {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.m-plus-rounded-1c-bold {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

@@ -1,0 +1,55 @@
+@use "../global" as global;
+
+// ---
+// 非表示
+// ---
+.u-hidden {
+  display: none;
+}
+
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.u-hidden-lg {
+  // デスクトップ時に非表示
+  @include global.mq(lg) {
+    display: none;
+  }
+}
+
+.u-hidden-sp {
+  // スマホ時に非表示
+  @include global.mq(sm-down) {
+    display: none;
+  }
+}
+
+.u-hidden-pc {
+  // PC表示時に非表示
+  @include global.mq(sm) {
+    display: none;
+  }
+}
+
+.u-hidden-xl-down {
+  // デスクトップ幅未満で非表示
+  @include global.mq(xl-down) {
+    display: none;
+  }
+}
+
+.u-hidden-xl {
+  // デスクトップ幅以上で非表示
+  @include global.mq(xl) {
+    display: none;
+  }
+}

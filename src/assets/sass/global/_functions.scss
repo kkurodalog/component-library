@@ -1,0 +1,19 @@
+@use "./variables" as global;
+
+// px→vw変換
+@function p2v($px, $width) {
+  @return calc($px / $width * 100vw);
+}
+
+@function min-p2v($px, $width) {
+  @return min($px, calc($px / $width * 100vw));
+}
+
+@function max-p2v($px, $width) {
+  @return max($px, calc($px / $width * 100vw));
+}
+
+// フォントサイズベースに対するrem変換
+@function p2r($px) {
+  @return calc($px / global.$fz-base) * 1rem;
+}

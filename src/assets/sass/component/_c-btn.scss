@@ -1,0 +1,440 @@
+@use "../global" as g;
+
+.c-btn__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.c-btn__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-block: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-btn__text {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+// ------------------
+// 色が薄くなる
+// ------------------
+.c-btn__hover-lighter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$btn-bg-color;
+  border: 1px solid g.$btn-border-color;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.3s;
+  }
+}
+
+@media (any-hover: hover) {
+  .c-btn__hover-lighter:hover {
+    background-color: g.$sub-color-white;
+
+    span {
+      color: g.$main-color;
+    }
+  }
+}
+
+// ------------------
+// 色が濃くなる
+// ------------------
+.c-btn__hover-darker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$main-color;
+  border: 1px solid g.$main-color;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.3s;
+  }
+}
+
+@media (any-hover: hover) {
+  .c-btn__hover-darker:hover {
+    background-color: g.$sub-color-tint;
+
+    span {
+      color: g.$sub-color-white;
+    }
+  }
+}
+
+// ------------------
+// 左からスライド
+// ------------------
+.c-btn__from-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$main-color;
+  border: 1px solid g.$main-color;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.6s;
+  }
+}
+
+.c-btn__from-left::before {
+  content: "";
+  position: absolute;
+  background-color: g.$sub-color-white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: all 0.6s;
+}
+
+@media (any-hover: hover) {
+  .c-btn__from-left:hover {
+    span {
+      color: g.$main-color;
+    }
+  }
+
+  .c-btn__from-left:hover::before {
+    transform: scale(1, 1);
+  }
+}
+
+// ------------------
+// 上からスライド
+// ------------------
+.c-btn__from-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$main-color;
+  border: 1px solid g.$main-color;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.6s;
+  }
+}
+
+.c-btn__from-top::before {
+  content: "";
+  position: absolute;
+  background-color: g.$sub-color-white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: all 0.6s;
+}
+
+@media (any-hover: hover) {
+  .c-btn__from-top:hover {
+    span {
+      color: g.$main-color;
+    }
+  }
+
+  .c-btn__from-top:hover::before {
+    transform: scale(1, 1);
+  }
+}
+
+// ------------------
+// 矢印の長さが変化
+// ------------------
+.c-btn__arrow-extend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 3rem;
+  background-color: g.$sub-color-white;
+  border: 1px solid g.$sub-color-shade;
+  border-radius: 0px;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  span {
+    z-index: 1;
+    color: g.$text-color;
+    transition: all 0.6s;
+  }
+}
+
+// ------------------
+// ななめにスライド
+// ------------------
+.c-btn__diagonal-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$main-color;
+  border: 1px solid g.$main-color;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.6s;
+  }
+}
+
+.c-btn__diagonal-slide::before {
+  content: "";
+  position: absolute;
+  background-color: g.$sub-color-white;
+  top: -2rem;
+  left: -1rem;
+  width: 100%;
+  height: 100%;
+  transform: rotate(10deg) scale(0, 1.8);
+  transform-origin: left;
+  transition: all 0.6s;
+}
+
+@media (any-hover: hover) {
+  .c-btn__diagonal-slide:hover {
+    span {
+      color: g.$main-color;
+    }
+  }
+
+  .c-btn__diagonal-slide:hover::before {
+    transform: rotate(10deg) scale(1.1, 1.8);
+  }
+}
+
+// ------------------
+// パカっと開く
+// ------------------
+.c-btn__from-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$main-color;
+  border: 1px solid g.$main-color;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.6s ease-out;
+  }
+}
+
+.c-btn__from-center::before {
+  content: "";
+  position: absolute;
+  background-color: g.$sub-color-white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transition: all 0.6s;
+}
+
+@media (any-hover: hover) {
+  .c-btn__from-center:hover {
+    span {
+      color: g.$main-color;
+    }
+  }
+
+  .c-btn__from-center:hover::before {
+    transform: scale(1, 1);
+  }
+}
+
+// ------------------
+// 円形に開く
+// ------------------
+.c-btn__like-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$main-color;
+  border: 1px solid g.$main-color;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.6s;
+  }
+}
+
+.c-btn__like-circle::before {
+  content: "";
+  position: absolute;
+  background-color: g.$sub-color-white;
+  top: 50%;
+  left: 50%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  transition: all 0.6s;
+}
+
+@media (any-hover: hover) {
+  .c-btn__like-circle:hover {
+    span {
+      color: g.$main-color;
+    }
+  }
+
+  .c-btn__like-circle:hover::before {
+    transform: translateX(-50%) translateY(-50%) scale(4.2);
+  }
+}
+
+// ------------------
+// ホバーとリーブで時間を変える
+// ------------------
+.c-btn__different-times {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$btn-bg-color;
+  border: 1px solid g.$btn-border-color;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.3s;
+  }
+}
+
+@media (any-hover: hover) {
+  .c-btn__different-times:hover {
+    background-color: g.$sub-color-white;
+    transition: all 1s;
+
+    span {
+      color: g.$main-color;
+      transition: all 1s;
+    }
+  }
+}
+
+// ------------------
+// 左からスライド
+// ------------------
+.c-btn__different-times-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: g.$main-color;
+  border: 1px solid g.$main-color;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  span {
+    z-index: 1;
+    color: g.$sub-color-white;
+    transition: all 0.3s;
+  }
+}
+
+.c-btn__different-times-2::before {
+  content: "";
+  position: absolute;
+  background-color: g.$sub-color-white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: all 0.3s;
+}
+
+@media (any-hover: hover) {
+  .c-btn__different-times-2:hover {
+    span {
+      color: g.$main-color;
+      transition: all 1s;
+    }
+  }
+
+  .c-btn__different-times-2:hover::before {
+    transform: scale(1, 1);
+    transition: all 1s;
+  }
+}

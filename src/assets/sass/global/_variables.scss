@@ -1,0 +1,92 @@
+// ------------------
+// 色
+// ------------------
+$main-color: #00abae; // メインカラー
+$sub-color-tint: #006668; // チント
+$sub-color-shade: #cceeee; // シェード
+$sub-color-white: #ffffff; // ホワイト
+$accent-color: #ae0300; // アクセント
+
+$text-color: #393939; // テキストカラー
+$text-color-white: #ffffff; // テキストカラー
+$text-color-active: #888; // テキストカラー（アクティブ）
+
+$link-color: #c2c2c2; // リンクカラー
+$link-color-active: #888; // リンクカラー（アクティブ）
+
+$border-color-01: #393939; // ボーダーカラー
+$border-color-02: #888; // ボーダーカラー
+$border-color-03: #ddd; // ボーダーカラー
+
+$button-text-color: #ffffff; // ボタンテキストカラー
+$btn-bg-color: #00abae; // ボタン背景カラー
+$btn-border-color: #00abae; // ボタンボーダーカラー
+$btn-text-color-active: #00abae; // ボタンテキストカラー（アクティブ）
+$btn-bg-color-active: #ffffff; // ボタン背景カラー（アクティブ）
+$btn-border-color-active: #00abae; // ボタンボーダーカラー（アクティブ）
+
+// ------------------
+// フォント
+// ------------------
+$ff-awesome: "Font Awesome 5 Free", sans-serif; // Font Awesome
+$ff-en: "M PLUS Rounded 1c", sans-serif; // 英字
+$ff-base: "M PLUS Rounded 1c", sans-serif; // 日本語標準
+$fz-base: 14px; // ベースフォントサイズ
+$fw-base: 500; // ベースフォントウェイト
+$lh-base: normal; // ベース行間
+
+// レイアウト
+$inner-width: 1000px; // インナー幅サイズ
+
+$xxs-width: 345px; //最小幅
+$xs-width: 375px; // スマートフォン
+$sm-width: 768px; // タブレット縦
+$md-width: 900px; // タブレット横
+$lg-width: 1000px; // デスクトップ
+$xl-width: 1280px; // ワイドスクリーン
+$xxl-width: 1514px; // 最大幅
+
+// ブレークポイント
+$breakpoints: (
+  // 345px未満
+  xxs-down: "not screen and (min-width: #{$xxs-width})",
+  // 375px未満
+  xs-down: "not screen and (min-width: #{$xs-width})",
+  // 375px以上
+  xs: "screen and (min-width: #{$xs-width})",
+  // 768px未満
+  sm-down: "not screen and (min-width: #{$sm-width})",
+  // 768px以上
+  sm: "screen and (min-width: #{$sm-width})",
+  // 900px未満
+  md-down: "not screen and (min-width: #{$md-width})",
+  // 900px以上
+  md: "screen and (min-width: #{$md-width})",
+  // 1000px以上
+  lg: "screen and (min-width: #{$lg-width})",
+  // 1280px未満
+  xl-down: "not screen and (min-width: #{$xl-width})",
+  // 1280px以上
+  xl: "screen and (min-width: #{$xl-width})",
+  // 1514px以上
+  xxl: "screen and (min-width: #{$xxl-width})"
+);
+
+// 重なり順の定義
+$layer: (
+  // ローディング
+  loading: 300,
+  // モーダル
+  modal: 100,
+  // ドロワー
+  drawer: 40,
+  // フローティング（トップページへ）
+  floating-top: 31,
+  // フローティング
+  floating: 30,
+  // ヘッダー
+  header: 20,
+  // フッター
+  footer: 10,
+  default: 1
+);
