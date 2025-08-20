@@ -1,0 +1,55 @@
+@use "../global" as g;
+
+// ------------------
+// 共通
+// ------------------
+.c-heading__items {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.c-heading__wrapper {
+  margin-block: 1rem;
+  margin-inline: 1rem;
+}
+
+// ------------------
+// 下線
+// ------------------
+.c-heading__under-line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: g.$main-color;
+  }
+}
+
+// ------------------
+// 一文字ずつ
+// ------------------
+.c-heading__slide-animation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  position: relative;
+
+  & .letter {
+    font-weight: 700;
+  }
+}

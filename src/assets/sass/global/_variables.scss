@@ -35,9 +35,10 @@ $fz-base: 14px; // ベースフォントサイズ
 $fw-base: 500; // ベースフォントウェイト
 $lh-base: normal; // ベース行間
 
+// ------------------
 // レイアウト
+// ------------------
 $inner-width: 1000px; // インナー幅サイズ
-
 $xxs-width: 345px; //最小幅
 $xs-width: 375px; // スマートフォン
 $sm-width: 768px; // タブレット縦
@@ -46,7 +47,9 @@ $lg-width: 1000px; // デスクトップ
 $xl-width: 1280px; // ワイドスクリーン
 $xxl-width: 1514px; // 最大幅
 
+// ------------------
 // ブレークポイント
+// ------------------
 $breakpoints: (
   // 345px未満
   xxs-down: "not screen and (min-width: #{$xxs-width})",
@@ -72,7 +75,9 @@ $breakpoints: (
   xxl: "screen and (min-width: #{$xxl-width})"
 );
 
+// ------------------
 // 重なり順の定義
+// ------------------
 $layer: (
   // ローディング
   loading: 300,

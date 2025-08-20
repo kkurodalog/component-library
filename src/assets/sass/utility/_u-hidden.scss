@@ -1,8 +1,8 @@
-@use "../global" as global;
+@use "../global" as g;
 
-// ---
+// ------------------
 // 非表示
-// ---
+// ------------------
 .u-hidden {
   display: none;
 }
@@ -21,35 +21,35 @@
 
 .u-hidden-lg {
   // デスクトップ時に非表示
-  @include global.mq(lg) {
+  @include g.mq(lg) {
     display: none;
   }
 }
 
 .u-hidden-sp {
   // スマホ時に非表示
-  @include global.mq(sm-down) {
+  @include g.mq(sm-down) {
     display: none;
   }
 }
 
 .u-hidden-pc {
   // PC表示時に非表示
-  @include global.mq(sm) {
+  @include g.mq(sm) {
     display: none;
   }
 }
 
 .u-hidden-xl-down {
   // デスクトップ幅未満で非表示
-  @include global.mq(xl-down) {
+  @include g.mq(xl-down) {
     display: none;
   }
 }
 
 .u-hidden-xl {
   // デスクトップ幅以上で非表示
-  @include global.mq(xl) {
+  @include g.mq(xl) {
     display: none;
   }
 }

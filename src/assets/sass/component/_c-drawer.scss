@@ -1,0 +1,152 @@
+@use "../global" as g;
+
+// ------------------
+// 共通
+// ------------------
+.c-drawer__items {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.c-drawer__wrapper {
+  margin-block: 1rem;
+  margin-inline: 1rem;
+}
+
+// ------------------
+// delay
+// ------------------
+.c-drawer__delay-bg {
+  background-color: g.$sub-color-shade;
+  padding-block: 1rem;
+}
+
+.c-drawer__delay {
+  width: 100%;
+  height: calc(100vh - 2rem);
+  background-color: g.$sub-color-white;
+  position: relative;
+  clip-path: inset(calc(100vh - 5rem) 0 0 calc(100% - 3rem) round 1rem);
+
+  &.is-checked {
+    animation: OpenDelay 1s forwards;
+
+    &.is-not-checked {
+      animation: CloseDelay 1s forwards;
+    }
+  }
+
+  @keyframes OpenDelay {
+    0% {
+      clip-path: inset(calc(100vh - 5rem) 0 0 calc(100% - 3rem) round 1rem);
+    }
+    50% {
+      clip-path: inset(0 0 0 calc(100% - 3rem) round 1rem);
+    }
+    100% {
+      clip-path: inset(0 0 0 0 round 1rem);
+    }
+  }
+  @keyframes CloseDelay {
+    0% {
+      clip-path: inset(0 0 0 0 round 1rem);
+    }
+    50% {
+      clip-path: inset(0 0 0 calc(100% - 3rem) round 1rem);
+    }
+    100% {
+      clip-path: inset(calc(100vh - 5rem) 0 0 calc(100% - 3rem) round 1rem);
+    }
+  }
+}
+
+.c-drawer__delay-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  opacity: 0;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 2rem;
+    height: 3rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      border-bottom: dotted 1px g.$main-color;
+    }
+  }
+
+  &.is-checked {
+    animation: OpacityDelay 0.3s 1s forwards;
+
+    &.is-not-checked {
+      animation: OpacityDelayReverse 0.3s forwards;
+    }
+  }
+
+  @keyframes OpacityDelay {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes OpacityDelayReverse {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.c-drawer__delay-icon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+
+  &.is-checked {
+    .c-drawer__delay-icon-bar {
+      &:nth-child(1) {
+        top: 50%;
+        transform: translate(0, -50%) rotate(135deg);
+      }
+      &:nth-child(2) {
+        top: 50%;
+        transform: translate(0, -50%) rotate(-135deg);
+      }
+    }
+  }
+}
+
+.c-drawer__delay-icon-bar {
+  position: absolute;
+  width: 100%;
+  height: 0.1rem;
+  border-radius: 1px;
+  background-color: g.$sub-color-tint;
+  transition: all 0.3s;
+
+  &:nth-child(1) {
+    top: calc(50% - 0.28rem);
+  }
+  &:nth-child(2) {
+    top: calc(50% + 0.28rem);
+  }
+}

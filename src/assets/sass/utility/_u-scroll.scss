@@ -1,0 +1,8 @@
+@use "../global" as g;
+
+// ------------------
+// 背景のスクロールを停止
+// ------------------
+.u-scroll-allowed {
+  overflow: hidden;
+}

@@ -1,4 +1,5 @@
 @use "../global" as g;
+
 html {
   font-size: min(calc(g.$fz-base / g.$xs-width * 100vw), g.$fz-base);
 
