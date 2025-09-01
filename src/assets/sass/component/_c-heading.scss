@@ -39,6 +39,39 @@
 }
 
 // ------------------
+// バウンド（よく跳ねる）
+// ------------------
+.c-heading__bound-more-animation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.c-heading__bound-more-animation span {
+  font-weight: 700;
+}
+
+// ------------------
+// バウンド（あまり跳ねない）
+// ------------------
+.c-heading__bound-less-animation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.c-heading__bound-less-animation span {
+  font-weight: 700;
+}
+
+// ------------------
 // 一文字ずつ
 // ------------------
 .c-heading__slide-animation {
@@ -48,8 +81,8 @@
   line-height: 3rem;
   font-size: 1.5rem;
   position: relative;
+}
 
-  & .letter {
-    font-weight: 700;
-  }
+.c-heading__slide-animation .letter {
+  font-weight: 700;
 }

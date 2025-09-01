@@ -60,6 +60,7 @@ img {
 
 a {
 	color: inherit;
+	cursor: pointer;
 	text-decoration: none;
 }
 
@@ -125,6 +126,11 @@ a {
 	margin-inline: auto;
 	padding-inline: min(20px, 5.3333333333vw);
 	width: 100%;
+}
+
+.l-inner__diagram-door {
+	margin-inline: auto;
+	max-width: 960px;
 }
 
 .c-border-1px {
@@ -572,6 +578,33 @@ a {
 	right: 0;
 }
 
+.c-heading__bound-more-animation {
+	align-items: flex-start;
+	display: flex;
+	font-size: 1.5rem;
+	justify-content: flex-start;
+	line-height: 3rem;
+	position: relative;
+}
+
+.c-heading__bound-more-animation span {
+	font-weight: 700;
+}
+
+.c-heading__bound-less-animation {
+	align-items: center;
+	display: flex;
+	font-size: 1.5rem;
+	font-weight: 700;
+	justify-content: flex-start;
+	line-height: 3rem;
+	position: relative;
+}
+
+.c-heading__bound-less-animation span {
+	font-weight: 700;
+}
+
 .c-heading__slide-animation {
 	align-items: center;
 	display: flex;
@@ -686,6 +719,83 @@ a {
 
 .c-drawer__delay-icon-bar:nth-child(2) {
 	top: calc(50% + 0.28rem);
+}
+
+.c-diagram__items {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.c-diagram__wrapper {
+	margin-block: 1rem;
+	margin-inline: 1rem;
+}
+
+.c-diagram-door__wrapper {
+	border-radius: 1rem;
+	height: auto;
+	margin-bottom: 5rem;
+	margin-top: 5rem;
+	overflow: hidden;
+}
+
+.c-diagram-door__items {
+	background: radial-gradient(white 20%, steelblue 120%);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	perspective: 1000px;
+	perspective-origin: top;
+	position: relative;
+}
+
+.c-diagram-door__inner-text {
+	color: steelblue;
+	display: flex;
+	font-size: 5rem;
+	font-weight: bold;
+	left: 50%;
+	position: absolute;
+	top: 25%;
+	transform: translateX(-50%);
+}
+
+.c-diagram-door__btn-wrapper {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	left: 50%;
+	margin-block: 1rem;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%);
+}
+
+.c-diagram-door__btn-wrapper .c-btn__like-circle {
+	background-color: steelblue;
+	border: 2px solid steelblue;
+}
+
+.c-diagram-door__btn-wrapper .c-btn__like-circle span {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.c-diagram-door__item {
+	flex: 0 1 auto;
+	transition: transform 0.6s;
+	z-index: 10;
+}
+
+.c-diagram-door__item.left {
+	transform-origin: left;
+}
+
+.c-diagram-door__item.right {
+	transform-origin: right;
 }
 
 .p-link__items {
@@ -813,6 +923,19 @@ a {
 .c-btn__different-times-2:hover::before {
 	transform: scale(1, 1);
 	transition: all 1s;
+}
+
+.c-diagram-door__btn-wrapper .c-btn__like-circle:hover span {
+	color: steelblue;
+}
+
+.c-diagram-door__items:hover .c-diagram-door__item.left {
+	transform: rotateY(60deg);
+}
+
+.c-diagram-door__items:hover .c-diagram-door__item.right {
+	transform: rotateY(-60deg);
+	transform-origin: right;
 }
 
 .c-btn__hover-lighter:hover {
