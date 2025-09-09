@@ -798,6 +798,60 @@ a {
 	transform-origin: right;
 }
 
+.c-text-animation__items {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.c-text-animation__paragraph-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-block: 1rem;
+	margin-inline: 1rem;
+}
+
+.c-text-animation__paragraph {
+	color: #c2c2c2;
+	font-size: 2rem;
+	line-height: 4rem;
+	position: relative;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.c-text-animation__paragraph::after {
+	bottom: 0;
+	clip-path: inset(0 100% 0 0);
+	color: #393939;
+	content: attr(data-txt);
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.c-text-animation__paragraph.name::after {
+	animation: TextSlide 1.5s linear 1s 1 alternate forwards;
+}
+
+.c-text-animation__paragraph.info::after {
+	animation: TextSlide 1.5s linear 2.5s 1 alternate forwards;
+}
+
+.c-text-animation__paragraph.self-introduction::after {
+	animation: TextSlide 1.5s linear 4s 1 alternate forwards;
+}
+
+.c-text-animation__paragraph.goal::after {
+	animation: TextSlide 1.5s linear 5.5s 1 alternate forwards;
+}
+
+.c-text-animation__paragraph.mail::after {
+	animation: TextSlide 1.5s linear 7s 1 alternate forwards;
+}
+
 .p-link__items {
 	display: flex;
 	flex-direction: column;
@@ -1080,6 +1134,22 @@ html {
 
 100% {
 	opacity: 0;
+}
+
+}
+
+@keyframes TextSlide {
+
+0% {
+	clip-path: inset(0 100% 0 0);
+}
+
+50% {
+	clip-path: inset(0 0 0 0);
+}
+
+100% {
+	clip-path: inset(0 0 0 0);
 }
 
 }

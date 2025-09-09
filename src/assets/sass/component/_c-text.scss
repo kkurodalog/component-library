@@ -1,0 +1,78 @@
+@use "../global" as g;
+
+// ------------------
+// 共通
+// ------------------
+.c-text-animation__items {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+// ------------------
+// 文字をなぞるアニメーション
+// ------------------
+.c-text-animation__paragraph-wrapper {
+  margin-block: 1rem;
+  margin-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-text-animation__paragraph {
+  font-size: 2rem;
+  line-height: 4rem;
+  color: #c2c2c2;
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    content: attr(data-txt);
+    position: absolute;
+    color: g.$text-color;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    clip-path: inset(0 100% 0 0);
+  }
+
+  &.name {
+    &::after {
+      animation: TextSlide 1.5s linear 1s 1 alternate forwards;
+    }
+  }
+  &.info {
+    &::after {
+      animation: TextSlide 1.5s linear 2.5s 1 alternate forwards;
+    }
+  }
+  &.self-introduction {
+    &::after {
+      animation: TextSlide 1.5s linear 4s 1 alternate forwards;
+    }
+  }
+  &.goal {
+    &::after {
+      animation: TextSlide 1.5s linear 5.5s 1 alternate forwards;
+    }
+  }
+  &.mail {
+    &::after {
+      animation: TextSlide 1.5s linear 7s 1 alternate forwards;
+    }
+  }
+}
+
+@keyframes TextSlide {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
