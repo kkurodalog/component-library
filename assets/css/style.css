@@ -852,6 +852,27 @@ a {
 	animation: TextSlide 1.5s linear 7s 1 alternate forwards;
 }
 
+.c-bounce-animation__items {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.c-bounce-animation__bounce {
+	font-size: 6rem;
+	font-weight: bold;
+	margin-top: 100px;
+}
+
+.c-bounce-animation__bounce.low {
+	animation: LowBounce 1s 1s both;
+}
+
+.c-bounce-animation__bounce.high {
+	animation: HighBounce 4s 3s both;
+}
+
 .p-link__items {
 	display: flex;
 	flex-direction: column;
@@ -1150,6 +1171,194 @@ html {
 
 100% {
 	clip-path: inset(0 0 0 0);
+}
+
+}
+
+@keyframes LowBounce {
+
+/* 開始位置（第1回頂点） */
+
+0% { /* スローアウト（ゆっくり減速） */
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -100px;
+}
+
+/* 地面に戻る */
+
+28.57% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第2回バウンドの頂点（減衰） */
+
+50% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -30px;
+}
+
+/* 地面に戻る */
+
+71.43% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第3回バウンドの頂点（さらに減衰） */
+
+85.71% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -9px;
+}
+
+/* 地面に戻る（最終位置） */
+
+100% {
+	translate: 0 0;
+}
+
+}
+
+@keyframes HighBounce {
+
+/* 開始位置（第1回頂点） */
+
+0% { /* スローアウト（ゆっくり減速） */
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -100px;
+}
+
+/* 地面に戻る */
+
+12.69% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第2回バウンドの頂点（減衰） */
+
+22.84% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -80px;
+}
+
+/* 地面に戻る */
+
+32.99% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第3回バウンドの頂点（さらに減衰） */
+
+41.12% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -64px;
+}
+
+/* 地面に戻る（最終位置） */
+
+49.24% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第4回バウンドの頂点（さらに減衰） */
+
+55.71% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -51px;
+}
+
+/* 地面に戻る（最終位置） */
+
+62.18% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第5回バウンドの頂点（さらに減衰） */
+
+67.39% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -41px;
+}
+
+/* 地面に戻る（最終位置） */
+
+72.59% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第6回バウンドの頂点（さらに減衰） */
+
+76.78% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -33px;
+}
+
+/* 地面に戻る（最終位置） */
+
+80.96% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第7回バウンドの頂点（さらに減衰） */
+
+84.26% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -26px;
+}
+
+/* 地面に戻る（最終位置） */
+
+87.56% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第8回バウンドの頂点（さらに減衰） */
+
+90.10% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -20px;
+}
+
+/* 地面に戻る（最終位置） */
+
+92.64% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第9回バウンドの頂点（さらに減衰） */
+
+94.67% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -16px;
+}
+
+/* 地面に戻る（最終位置） */
+
+96.70% {
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	translate: 0 0;
+}
+
+/* 第10回バウンドの頂点（さらに減衰） */
+
+98.35% {
+	animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	translate: 0 -13px;
+}
+
+/* 地面に戻る（最終位置） */
+
+100% {
+	translate: 0 0;
 }
 
 }
